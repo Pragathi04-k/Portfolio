@@ -11,10 +11,12 @@ export default function App() {
   return (
     <div
       style={{
-        backgroundColor: "#0f172a",   // Navy Blue
-        color: "#ffffff",             // White text
+        backgroundColor: "#0f172a",
+        color: "#ffffff",
         minHeight: "100vh",
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        margin: 0,
+        padding: 0,
       }}
     >
       <Navbar />
