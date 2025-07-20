@@ -22,11 +22,11 @@ export default function Footer() {
         <div>
           <h1 className="text-xl font-bold text-white mb-2">
             <span className="text-sky-400">&lt;</span>
-            Pragathi Kodmad
+            Pragathi
             <span className="text-sky-400">/&gt;</span>
           </h1>
           <p className="text-gray-400 text-sm">
-            Full Stack Developer • React Enthusiast • Lifelong Learner
+            Full Stack Developer
           </p>
         </div>
 
@@ -68,20 +68,12 @@ export default function Footer() {
           >
             <FaCode />
           </a>
-          <a
-            href="https://instagram.com/your-instagram" // replace if needed
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-sky-400 transition"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
+          
         </div>
 
         {/* Right Section - Copyright */}
         <p className="text-sm text-gray-400 text-center md:text-right">
-          &copy; {new Date().getFullYear()} Pragathi Kodmad. All rights reserved.
+          &copy; {new Date().getFullYear()} Pragathi. All rights reserved.
         </p>
       </motion.div>
     </footer>
