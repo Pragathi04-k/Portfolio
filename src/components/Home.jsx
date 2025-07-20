@@ -36,6 +36,16 @@ export default function Home() {
     }
   };
 
+  const scrollToProjects = () => {
+    const target = document.getElementById("projects");
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -89,29 +99,55 @@ export default function Home() {
           </a>
         </div>
 
-        {/* My Skills Button */}
-        <button
-          onClick={scrollToSkills}
-          className="mt-6 inline-block bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
-        >
-          My Skills
-        </button>
+        {/* My Skills & Featured Projects Buttons */}
+        <div className="mt-6 flex flex-wrap gap-4">
+          <button
+            onClick={scrollToSkills}
+            className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
+          >
+            My Skills
+          </button>
+          <button
+            onClick={scrollToProjects}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
+          >
+            Featured Projects
+          </button>
+        </div>
+
+        {/* Internship & Hackathon Highlights */}
+        <div className="mt-8 flex gap-6 flex-wrap">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="px-6 py-4 rounded-xl border border-sky-400 text-white bg-white/5 backdrop-blur-md shadow-md hover:shadow-lg transition duration-300"
+          >
+            <h3 className="text-3xl font-bold text-sky-400">2+</h3>
+            <p className="text-sm font-medium text-gray-300">Internships</p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="px-6 py-4 rounded-xl border border-teal-400 text-white bg-white/5 backdrop-blur-md shadow-md hover:shadow-lg transition duration-300"
+          >
+            <h3 className="text-3xl font-bold text-teal-400">2+</h3>
+            <p className="text-sm font-medium text-gray-300">Hackathons</p>
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* Image Section */}
       <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8 }}
-  className="w-80 h-80 rounded-full overflow-hidden border-4 border-teal-500 animate-glow mt-10 md:mt-0 md:ml-28"
->
-  <img
-    src={profileImage}
-    alt="Profile"
-    className="w-full h-full object-cover"
-  />
-</motion.div>
-
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-80 h-80 rounded-full overflow-hidden border-4 border-teal-500 animate-glow mt-10 md:mt-0 md:ml-28"
+      >
+        <img
+          src={profileImage}
+          alt="Profile"
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
     </section>
   );
 }
