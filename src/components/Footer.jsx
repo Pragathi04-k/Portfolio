@@ -1,0 +1,89 @@
+import React from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaCode,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+
+export default function Footer() {
+  return (
+    <footer className="bg-slate-900 text-white py-10 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8"
+      >
+        {/* Left Section - Name and Role */}
+        <div>
+          <h1 className="text-xl font-bold text-white mb-2">
+            <span className="text-sky-400">&lt;</span>
+            Pragathi Kodmad
+            <span className="text-sky-400">/&gt;</span>
+          </h1>
+          <p className="text-gray-400 text-sm">
+            Full Stack Developer • React Enthusiast • Lifelong Learner
+          </p>
+        </div>
+
+        {/* Middle Section - Social Links */}
+        <div className="flex gap-6 text-2xl text-gray-400">
+          <a
+            href="https://www.linkedin.com/in/pragathi-kodmad/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-400 transition"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/kodmadpragathi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-400 transition"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://twitter.com/your-twitter" // replace with your Twitter
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-400 transition"
+            aria-label="Twitter"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://yourportfolio.com" // optional portfolio
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-400 transition"
+            aria-label="Portfolio"
+          >
+            <FaCode />
+          </a>
+          <a
+            href="https://instagram.com/your-instagram" // replace if needed
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-400 transition"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
+        </div>
+
+        {/* Right Section - Copyright */}
+        <p className="text-sm text-gray-400 text-center md:text-right">
+          &copy; {new Date().getFullYear()} Pragathi Kodmad. All rights reserved.
+        </p>
+      </motion.div>
+    </footer>
+  );
+}

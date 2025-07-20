@@ -1,76 +1,82 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
-  // URL to your resume PDF — you can replace it with your actual hosted resume link or add resume.pdf in public folder
-  const resumeUrl = "/Pragathi_Kodmad_Resume.pdf";
-
   return (
-    <section id="contact" style={{ padding: "4rem 2rem", maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 style={{ fontSize: "2rem", borderBottom: "2px solid #4fc3f7", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Contact Me</h2>
-        <p style={{ marginBottom: "1rem" }}>
-          Feel free to reach out for opportunities, collaborations, or just to say hi!
-        </p>
-        <p style={{ fontWeight: "600" }}>Email: <a href="mailto:kodmadpragathi@gmail.com" style={{ color: "#4fc3f7" }}>kodmadpragathi@gmail.com</a></p>
-        <p style={{ fontWeight: "600" }}>Phone: <a href="tel:+917907110676" style={{ color: "#4fc3f7" }}>+91 7907110676</a></p>
+    <section id="contact" className="relative bg-slate-900 py-20 px-4 text-white overflow-hidden">
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-sky-500 opacity-20 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-3xl"></div>
 
-        <div style={{ marginTop: "1.5rem", display: "flex", justifyContent: "center", gap: "1rem" }}>
-          <a
-            href={resumeUrl}
-            download
-            style={{
-              padding: "0.7rem 1.2rem",
-              backgroundColor: "#4fc3f7",
-              color: "#0b1e4d",
-              fontWeight: "700",
-              borderRadius: "25px",
-              textDecoration: "none",
-              boxShadow: "0 4px 10px rgba(79,195,247,0.7)",
-              transition: "background-color 0.3s",
-            }}
-            onMouseEnter={e => (e.target.style.backgroundColor = "#82ccf6")}
-            onMouseLeave={e => (e.target.style.backgroundColor = "#4fc3f7")}
-          >
-            Download Resume
-          </a>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start relative z-10">
+        {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-slate-800/50 backdrop-blur-md border border-slate-700 p-8 rounded-3xl shadow-lg"
+        >
+          <h2 className="text-3xl font-bold mb-6 text-sky-400">Let's Talk</h2>
+          <form action="https://formspree.io/f/mdkdader" method="POST" className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="w-full px-4 py-3 rounded-2xl bg-slate-700/70 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="w-full px-4 py-3 rounded-2xl bg-slate-700/70 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              className="w-full px-4 py-3 rounded-2xl bg-slate-700/70 border border-slate-600 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-sky-500 to-purple-500 hover:from-sky-600 hover:to-purple-600 text-white px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-md"
+            >
+              📩 Send Message
+            </button>
+          </form>
+        </motion.div>
 
-          <a
-            href="mailto:kodmadpragathi@gmail.com?subject=Hiring%20Inquiry"
-            style={{
-              padding: "0.7rem 1.2rem",
-              backgroundColor: "#1b3b8a",
-              color: "#4fc3f7",
-              fontWeight: "700",
-              borderRadius: "25px",
-              textDecoration: "none",
-              border: "2px solid #4fc3f7",
-              boxShadow: "0 4px 10px rgba(79,195,247,0.5)",
-              transition: "background-color 0.3s, color 0.3s",
-            }}
-            onMouseEnter={e => {
-              e.target.style.backgroundColor = "#4fc3f7";
-              e.target.style.color = "#0b1e4d";
-            }}
-            onMouseLeave={e => {
-              e.target.style.backgroundColor = "#1b3b8a";
-              e.target.style.color = "#4fc3f7";
-            }}
-          >
-            Hire Me
-          </a>
-        </div>
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="p-6"
+        >
+          <h2 className="text-3xl font-bold mb-6 text-purple-400">Contact Info</h2>
+          <div className="space-y-4 text-gray-300 mb-6">
+            <p className="flex items-center gap-4">
+              <FaEnvelope className="text-sky-400 text-xl" />
+              <a href="mailto:kodmadpragathi@gmail.com" className="hover:underline text-white">
+                kodmadpragathi@gmail.com
+              </a>
+            </p>
+            <p className="flex items-center gap-4">
+              <FaMapMarkerAlt className="text-sky-400 text-xl" />
+              Karnataka, India
+            </p>
+          </div>
 
-        <div style={{ marginTop: "1.5rem" }}>
-          <a href="https://github.com/Pragathi04-k" target="_blank" rel="noreferrer" style={{ color: "#4fc3f7", marginRight: "1rem" }}>GitHub</a>
-          <a href="http://www.linkedin.com/in/pragathi-kodmad" target="_blank" rel="noreferrer" style={{ color: "#4fc3f7" }}>LinkedIn</a>
-        </div>
-      </motion.div>
+          <h3 className="text-2xl font-semibold text-white mb-3">Let’s connect professionally</h3>
+          <p className="text-gray-400 leading-relaxed">
+            "Passionate about turning ideas into seamless digital experiences -- let’s build something impactful together!"
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 }

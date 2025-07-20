@@ -26,28 +26,38 @@ const letterVariants = {
 };
 
 export default function Home() {
+  const scrollToSkills = () => {
+    const target = document.getElementById("skills");
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="home"
-      className="px-6 pt-10 pb-10 bg-blue flex flex-col md:flex-row items-start"
+      className="min-h-[90vh] px-6 pt-20 pb-10 bg-blue flex flex-col md:flex-row items-center justify-start md:justify-start"
     >
       {/* Text Section */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex-1 max-w-xl text-left ml-6"
+        className="flex-1 max-w-2xl text-left md:ml-12"
       >
-        <h1 className="text-5xl md:text-6xl font-bold mb-2 text-white font-times">
+        <h1 className="text-6xl md:text-7xl font-bold mb-4 text-white font-times">
           Hi, I'm Pragathi
         </h1>
-        <h2 className="text-2xl font-semibold text-sky-400 mb-2">
+        <h2 className="text-2xl md:text-3xl font-semibold text-sky-400 mb-4">
           Full Stack Developer
         </h2>
 
-        {/* Animated One-Line Sentence */}
+        {/* Animated Sentence - Single line */}
         <motion.div
-          className="text-sm md:text-base font-medium text-white mt-4 mb-4 whitespace-nowrap overflow-x-auto"
+          className="text-base md:text-lg font-medium text-white mt-4 mb-6 whitespace-nowrap overflow-x-auto no-scrollbar"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -65,35 +75,43 @@ export default function Home() {
             href="http://www.linkedin.com/in/pragathi-kodmad"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white/10"
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
           >
-            <FaLinkedin size={18} />
+            <FaLinkedin size={20} />
           </a>
-
           <a
             href="https://github.com/pragathikodmad"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white/10"
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
           >
-            <FaGithub size={18} />
+            <FaGithub size={20} />
           </a>
         </div>
+
+        {/* My Skills Button */}
+        <button
+          onClick={scrollToSkills}
+          className="mt-6 inline-block bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg shadow transition duration-300"
+        >
+          My Skills
+        </button>
       </motion.div>
 
       {/* Image Section */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="w-64 h-64 rounded-full overflow-hidden border-4 border-teal-500 animate-glow mt-19  mx-auto"
-      >
-        <img
-          src={profileImage}
-          alt="Profile"
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8 }}
+  className="w-80 h-80 rounded-full overflow-hidden border-4 border-teal-500 animate-glow mt-10 md:mt-0 md:ml-28"
+>
+  <img
+    src={profileImage}
+    alt="Profile"
+    className="w-full h-full object-cover"
+  />
+</motion.div>
+
     </section>
   );
 }
