@@ -1,10 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Import images from src/assets
+// Project images
 import excelImage from "../assets/excel.png";
 import testImage from "../assets/test-assessment.png";
 import itineraryImage from "../assets/itinerary-planner.png";
+
+// Certification logos
+import udemyLogo from "../assets/udemy.png";
+import codlabLogo from "../assets/codelab.png";
+import tcsLogo from "../assets/tcs.png";
+import infosysLogo from "../assets/infosys.png";
 
 // Animation variants
 const containerVariants = {
@@ -39,6 +45,7 @@ const skillVariants = {
   }),
 };
 
+// Project Data
 const projects = [
   {
     name: "Excel-Analyzer",
@@ -69,22 +76,27 @@ const projects = [
   },
 ];
 
+// Certification Data with Logos
 const certifications = [
   {
     name: "The Complete Web Development Bootcamp – Udemy",
     link: "https://drive.google.com/file/d/1hitkUGJGfROiBe-xIITtjL2esnOJGMRg/view?usp=sharing",
+    logo: udemyLogo,
   },
   {
     name: "React Workshop – Codlab Systems",
     link: "https://drive.google.com/file/d/1uClw35Q5moK8q0fimiFnsGl4FPbpwBmy/view?usp=sharing",
+    logo: codlabLogo,
   },
   {
     name: "TCS iON Career Edge – Young Professional Course",
     link: "https://drive.google.com/file/d/13sEYOrcZd3qH0LYuXGyBYQdU7nWjfFwE/view?usp=sharing",
+    logo: tcsLogo,
   },
   {
     name: "Database and SQL Course – Infosys Springboard",
     link: "https://drive.google.com/file/d/1ySw8q0SHGFosfU-OFtpV2sQ3GWPKiqsO/view?usp=sharing",
+    logo: infosysLogo,
   },
 ];
 
@@ -148,7 +160,6 @@ export default function Projects() {
                         ))}
                       </ul>
                     </div>
-
                     <span className="text-sky-400 font-semibold hover:text-sky-300 transition-colors">
                       View Source →
                     </span>
@@ -169,15 +180,25 @@ export default function Projects() {
           </h2>
 
           <ul className="grid gap-6 sm:grid-cols-1">
-            {certifications.map(({ name, link }, index) => (
+            {certifications.map(({ name, link, logo }, index) => (
               <motion.li
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, type: "spring", stiffness: 60 }}
-                className="bg-black/30 backdrop-blur-sm border border-gray-700 p-5 rounded-xl hover:border-sky-400 transition-all"
+                className="flex items-center gap-4 bg-black/30 backdrop-blur-sm border border-gray-700 p-5 rounded-xl hover:border-sky-400 transition-all"
               >
+                {/* Logo in circular frame */}
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center border border-gray-300 overflow-hidden">
+                  <img
+                    src={logo}
+                    alt="logo"
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
+
+                {/* Certificate name */}
                 <a
                   href={link}
                   target="_blank"
