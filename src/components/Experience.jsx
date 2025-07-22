@@ -9,7 +9,8 @@ const experiences = [
     location: "Bangalore, Karnataka",
     description:
       "Developed dynamic web applications using React.js and Node.js, improving site performance by 30%, and optimized database queries in MongoDB, reducing load times by 25%. Built features like Excel file upload, automated data cleaning, and interactive chart generation to visualize insights.",
-    techStack: ["React.js", "Node.js", "MongoDB", "Excel", "DataViz","TeamWork"],
+    techStack: ["React.js", "Node.js", "MongoDB", "Excel", "DataViz", "TeamWork"],
+    certificateUrl: "", 
   },
   {
     title: "Web Development Intern",
@@ -19,6 +20,7 @@ const experiences = [
     description:
       "Developed dynamic web applications using HTML, CSS, JavaScript, and Node.js, improving site performance by 30%. Optimized MySQL database queries, reducing load times by 25%. Designed interactive dashboards, UI components, and responsive layouts.",
     techStack: ["HTML", "CSS", "JavaScript", "MySQL"],
+    certificateUrl: "https://drive.google.com/file/d/1-8ODcjQSK4wCM6MqtCxqDHVj0iI9mnQx/view?usp=sharing",
   },
 ];
 
