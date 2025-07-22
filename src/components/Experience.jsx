@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { HiOutlineDocumentText } from "react-icons/hi"; // Certificate icon
 
 const experiences = [
   {
@@ -10,7 +11,7 @@ const experiences = [
     description:
       "Developed dynamic web applications using React.js and Node.js, improving site performance by 30%, and optimized database queries in MongoDB, reducing load times by 25%. Built features like Excel file upload, automated data cleaning, and interactive chart generation to visualize insights.",
     techStack: ["React.js", "Node.js", "MongoDB", "Excel", "DataViz", "TeamWork"],
-    certificateUrl: "", 
+    certificateUrl: "", // No certificate for this
   },
   {
     title: "Web Development Intern",
@@ -63,7 +64,7 @@ export default function Experience() {
             border: 1px solid black;
             border-radius: 12px;
             padding: 1.5rem 1.8rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             position: relative;
             animation: float 4s ease-in-out infinite;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
@@ -96,6 +97,22 @@ export default function Experience() {
             font-size: 0.85rem;
             padding: 0.3rem 0.7rem;
             border-radius: 6px;
+          }
+
+          .cert-icon-container {
+            position: absolute;
+            top: 3.2rem;
+            right: 1.6rem;
+          }
+.cert-icon {
+  font-size: 1.9rem;
+  color: #3da9fc;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+          .cert-icon:hover {
+            transform: scale(1.2);
           }
 
           .experience-location {
@@ -151,6 +168,20 @@ export default function Experience() {
           transition={{ delay: idx * 0.2, duration: 0.6 }}
         >
           <div className="experience-duration">{exp.duration}</div>
+
+          {exp.certificateUrl && (
+            <div className="cert-icon-container">
+              <a
+                href={exp.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Certificate"
+              >
+                <HiOutlineDocumentText className="cert-icon" />
+              </a>
+            </div>
+          )}
+
           <h3 className="experience-title">{exp.title}</h3>
           <span className="experience-company">{exp.company}</span>
           <div className="experience-location">{exp.location}</div>
