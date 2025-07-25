@@ -50,7 +50,7 @@ const skillVariants = {
 const projects = [
   {
     name: "Excel-Analyzer",
-    duration: "May 2025 – July 2025",
+    duration: "May 2025 – June 2025",
     description:
       "Developed as a full stack project during an internship, this web-based tool allows users to upload Excel files, automatically clean and process the data, and generate visual charts to highlight key insights.",
     github: "https://github.com/Pragathi04-k/Excel-Analyzer",
