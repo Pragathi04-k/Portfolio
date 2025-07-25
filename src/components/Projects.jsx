@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import excelImage from "../assets/excel.png";
 import testImage from "../assets/test-assessment.png";
 import itineraryImage from "../assets/itinerary-planner.png";
+import blogImage from "../assets/blog.png";
 
 // Certification logos
 import udemyLogo from "../assets/udemy.png";
@@ -73,6 +74,15 @@ const projects = [
     github: "https://github.com/Pragathi04-k/Itinerary-Planner",
     image: itineraryImage,
     skills: ["HTML", "CSS", "JavaScript", "Responsive UI", "Bootstrap"],
+  },
+  {
+    name: "Blog-App",
+    duration: "June 2025 – July 2025",
+    description:
+      "A dynamic blog application that allows users to create, read, update, and delete blog posts. Built with modern web technologies to manage and display content efficiently.",
+    github: "https://github.com/Pragathi04-k/Blog-app",
+    image: blogImage, 
+    skills: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   },
 ];
 
